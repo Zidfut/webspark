@@ -14,7 +14,7 @@ html, body {
     padding: 0;
     margin: 0;
     font-family: var(--font-family);
-    min-width: 425px;
+    min-width: 320px;
 }
 
 
@@ -115,7 +115,20 @@ html, body {
         }
 
         @media(max-width: 576px) {
+            padding-inline: 10px;
+            gap: 10px;
             align-items: center;
+        }
+    }
+
+    &__logo {
+        @media(max-width: 576px) {
+            max-width: 100px;
+
+            img {
+                display: block;
+                width: 100%;
+            }
         }
     }
 
@@ -230,10 +243,14 @@ html, body {
                 display: flex;
                 align-items: center;
 
+                @media(max-width: 576px) {
+                    height: 64px;
+                }
+
                 &-img {
                     display: block;
-                    height: 86px;
-                    width: 86px;
+                    height: 100%;
+                    aspect-ratio: 1;
                 }
 
                 &-wrap {
@@ -244,6 +261,10 @@ html, body {
     
                     @media(max-width: 768px) {
                         padding: 11px 16px;
+                    }
+
+                    @media(max-width: 576px) {
+                        padding: 10px;
                     }
                 }
             }
@@ -269,6 +290,12 @@ html, body {
                         gap: 6px;
                     }
                 }
+
+                &-text {
+                    @media(max-width: 576px) {
+                        font-size: 10px;
+                    }
+                }
             }
 
         }
@@ -281,6 +308,16 @@ html, body {
             );
             column-gap: 8px;
             row-gap: 16px;
+
+            @media(max-width: 576px) {
+                grid-template-columns: repeat(
+                    auto-fit,
+                    minmax(140px, 1fr)
+                );
+
+                column-gap: 4px;
+                row-gap: 8px;
+            }
 
             .list__card {
 
@@ -298,6 +335,11 @@ html, body {
                     justify-content: flex-start;
                     column-gap: 8px;
                     row-gap: 24px;
+
+                    @media(max-width: 576px) {
+                        padding: 10px 8px 14px;
+                        row-gap: 14px;
+                    }
                 }
             }
 
@@ -309,10 +351,18 @@ html, body {
 
                 .card__item-label {
                     font-size: 14px;
+
+                    @media(max-width: 576px) {
+                        font-size: 11px;
+                    }
                 }
 
                 .card__item-text {
                     font-size: 12px;
+
+                    @media(max-width: 576px) {
+                        font-size: 10px;
+                    }
                 }
 
                 &:not(.uploaded){
@@ -352,6 +402,10 @@ html, body {
         @media(max-width: 768px) {
             font-size: 14px;
         }
+
+        @media(max-width: 576px) {
+            font-size: 11px;
+        }
     }
 
     &-detail {
@@ -365,6 +419,10 @@ html, body {
 
         @media(max-width: 768px) {
             font-size: 12px;
+        }
+
+        @media(max-width: 576px) {
+            font-size: 10px;
         }
     }
 
@@ -381,6 +439,11 @@ html, body {
         @media(max-width: 768px) {
             width: 16px;
             height: 16px;
+        }
+
+        @media(max-width: 576px) {
+            width: 14px;
+            height: 14px;
         }
 
         &.icon-heart {
