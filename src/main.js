@@ -18,7 +18,7 @@ datepickers.forEach((datepicker) => {
         isMobile: isMobileDevice(),
     });
 
-    const container = datepicker.closest('.datepicker__item');
+    const container = datepicker.parentElement;
     if (container) {
         const openBtn = container.querySelector('[data-js-datepicker-open]');
         if (openBtn) {
@@ -42,8 +42,8 @@ const viewClassRow = 'main__list--row';
 const toggleView = (button) => {
     if (!mainList || !button) return;
 
-    const isGridView = button.classList.contains('icon-grid');
     const activeButton = document.querySelector('[data-js-view].active');
+    
 
     if (button === activeButton) return;
 
@@ -53,8 +53,8 @@ const toggleView = (button) => {
         btn.classList.toggle('active', btn === button);
     });
 
-    mainList.classList.toggle(viewClassGrid, isGridView);
-    mainList.classList.toggle(viewClassRow, !isGridView);
+    mainList.classList.toggle(viewClassGrid);
+    mainList.classList.toggle(viewClassRow);
 
     Flip.from(state, {
         duration: 0.2,
